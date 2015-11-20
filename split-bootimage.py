@@ -7,7 +7,6 @@
 
 import sys
 import struct
-from collections import namedtuple
 
 def aligned(n, page_size):
     num_pages = (n + page_size - 1)/page_size
