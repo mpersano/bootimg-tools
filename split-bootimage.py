@@ -9,8 +9,7 @@ import sys
 import struct
 
 def aligned(n, page_size):
-    num_pages = (n + page_size - 1)/page_size
-    return num_pages*page_size
+    return (n + page_size - 1) & ~(page_size - 1)
 
 def dump_part(f_in, filename, offset, size):
     f_out = open(filename, 'wb')
